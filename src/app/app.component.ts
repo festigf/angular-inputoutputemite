@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
+  nomeModificato:string="";
+
+  OnNameOut(nameOut:string){
+    this.nomeModificato=nameOut;
+  }
 }

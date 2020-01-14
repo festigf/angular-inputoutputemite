@@ -1,4 +1,4 @@
-import { Component,OnInit Input,Output,EventEmitter } from '@angular/core';
+import { Component,OnInit, Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'hello',
@@ -8,9 +8,12 @@ import { Component,OnInit Input,Output,EventEmitter } from '@angular/core';
 export class HelloComponent implements OnInit {
   @Input() name: string;
   @Output() nameOut : EventEmitter<string>;
+  constructor(){
+    this.nameOut=new EventEmitter();
+  }
   ngOnInit(){
-    this.name+=" mod!!";
-    this.nameOut.emit(this.name);
+    
+    this.nameOut.emit(this.name+" mod!!");
   }
 
 }
