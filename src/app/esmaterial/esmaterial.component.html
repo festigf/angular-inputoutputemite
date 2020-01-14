@@ -12,7 +12,8 @@
       bred for hunting.
     </p>
       <mat-form-field>
-    <input matInput placeholder="Input">
+    <input matInput placeholder="Input" #nominativo>
+    <button mat-raised-button color="primary" (click)="onClick(nominativo)">Primary</button>
   </mat-form-field>
   </mat-card-content>
   <mat-card-actions>

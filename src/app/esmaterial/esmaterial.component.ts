@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./esmaterial.component.css']
 })
 export class EsmaterialComponent implements OnInit {
-
+  dato:string;
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClick(nominativo:string){
+    console.log(nominativo.value);
+  }
 }
