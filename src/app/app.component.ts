@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   nomeModificato:string="";
   i:any=null;
   ora:string="";
-  options = {'weekday': 'long', 'month': '2-digit', 'day': '2-digit', 'year': 'numeric'};
+  options = {'weekday': 'long', 'month': '2-digit', 'day': '2-digit', 'year': 'numeric',hour:"numeric",minute:"numeric",second:"numeric"};
 
   constructor( ){
 
