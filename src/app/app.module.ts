@@ -12,6 +12,7 @@ import { BetterHighlightDirective } from './directives/better-highlight.directiv
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { EsmaterialComponent } from './esmaterial/esmaterial.component';
+import { DateFormatPipe } from './date-format.pipe';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { EsmaterialComponent } from './esmaterial/esmaterial.component';
     ReactiveFormsModule,
     
     ],
-  declarations: [ AppComponent, HelloComponent, EsmaterialComponent, BetterHighlightDirective ],
+  declarations: [ AppComponent, HelloComponent, EsmaterialComponent, BetterHighlightDirective, DateFormatPipe ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
