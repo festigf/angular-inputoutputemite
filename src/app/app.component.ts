@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
   nomeModificato:string="";
   i:any=null;
   ora:string="";
+  options = {'weekday': 'long', 'month': '2-digit', 'day': '2-digit', 'year': 'numeric'};
+
   constructor( ){
 
   }
@@ -18,7 +20,8 @@ export class AppComponent implements OnInit {
       count=>{
         count++;
         this.nomeModificato+=count;
-        this.ora=Date.now().toLocaleString();
+        this.ora=new Date().toLocaleString('it-IT', this.options);
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
       }
     )
   }
