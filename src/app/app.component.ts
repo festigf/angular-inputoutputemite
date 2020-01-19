@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {interval } from 'rxjs';
+import {GetMusicService} from './getmusic.service';
+import {Book} from './Book';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -12,8 +14,12 @@ export class AppComponent implements OnInit {
   ora:string="";
   options = {'weekday': 'long', 'month': '2-digit', 'day': '2-digit', 'year': 'numeric',hour:"numeric",minute:"numeric",second:"numeric"};
   dataPipe:Date=new Date();
-  constructor( ){
-
+  music:Book[]=[];
+  constructor(private getMusicService:GetMusicService ){
+    this.getMusicService.getMusic().subscribe( (music:Book[]) =>{
+      console.log(music[0]);
+      this.music=music;
+    })
   }
   ngOnInit(){
     this.i=interval(1000).subscribe(

@@ -10,3 +10,9 @@
 <app-esmaterial></app-esmaterial>
 
 <p [appBetterHighlight]="'red'" defaultColor="yellow">Style me with a better directive!</p>
+
+<ul>
+  <div *ngFor="let m of music">
+    {{m.author }}
+  </div>
+</ul>
