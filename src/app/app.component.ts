@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {interval } from 'rxjs';
 import {GetMusicService} from './getmusic.service';
 import {Book} from './Book';
@@ -12,7 +12,9 @@ export class AppComponent implements OnInit {
   nomeModificato:string="";
   i:any=null;
   ora:string="";
-  options = {'weekday': 'long', 'month': '2-digit', 'day': '2-digit', 'year': 'numeric',hour:"numeric",minute:"numeric",second:"numeric"};
+  
+  options = {'weekday': 'short', 'month': '2-digit', 'day': '2-digit', 'year': 'numeric',hour:"numeric",minute:"numeric",second:"numeric"};
+
   dataPipe:Date=new Date();
   music:Book[]=[];
   constructor(private getMusicService:GetMusicService ){
@@ -22,7 +24,9 @@ export class AppComponent implements OnInit {
     })
   }
   ngOnInit(){
-    this.i=interval(1000).subscribe(
+    this.i=interval(1000);
+
+    this.i.subscribe(
       count=>{
         count++;
         this.nomeModificato+=count;
@@ -30,6 +34,10 @@ export class AppComponent implements OnInit {
         //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
       }
     )
+  }
+
+  ngOnDestroy(){
+    this.i.unsubscribe();
   }
   OnNameOut(nameOut:string){
     this.nomeModificato=nameOut;
