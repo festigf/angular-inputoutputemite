@@ -13,6 +13,6 @@
 
 <ul>
   <div *ngFor="let m of music">
-    {{m.author }}
+  <p [appBetterHighlight]="'red'" defaultColor="gray"> {{m.author }} - {{m.title }}</p>
   </div>
 </ul>
